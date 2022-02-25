@@ -7,7 +7,7 @@ import PostCard from './components/PostCard';
 function App() {
   return (
     <div className="App">
-      <PostCard story_title="this title" />
+     
    
     </div>
   );
