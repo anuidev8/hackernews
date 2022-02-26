@@ -1,5 +1,5 @@
 import react from 'react'
-import { render,cleanup,fireEvent, getByTestId } from '@testing-library/react'
+import { render,cleanup,fireEvent } from '@testing-library/react'
 
 import PostCard from '../components/PostCard'
 
