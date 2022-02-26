@@ -37,7 +37,7 @@ describe('Post component', ()=>{
     })
     
     //ACTIONS
-    it('should call onChange when the option is selected', async()=>{
+  /*   it('should call onChange when the option is selected', async()=>{
             const mockedOnchange = jest.fn()
             render(<SelectOptionTech onChange={ mockedOnchange} optionsItems={selectOptions} />)
             
@@ -53,7 +53,7 @@ describe('Post component', ()=>{
             
 
 
-    })
+    }) */
 
     afterAll(cleanup)
 })

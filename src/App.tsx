@@ -1,16 +1,16 @@
 import React from 'react';
 /* import logo from './logo.svg'; */
 
-//components
-import PostCard from './components/PostCard';
+import MainRoutes  from './MainRoutes';
 
-function App() {
-  return (
-    <div className="App">
-     
-   
-    </div>
-  );
+const App = () =>{
+  return(
+    <main>
+       <h1>web page</h1> 
+      <MainRoutes />
+
+    </main>
+  )
 }
 
 export default App;
