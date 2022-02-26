@@ -1,0 +1,41 @@
+.postCard{
+  
+    contain: layout paint;
+    height: 90px;
+    background-color: #fff;
+    border: solid 1px var(--black-light-color);
+    border-radius: .3rem;
+    opacity: 0.8;
+    transition: opacity .2s ease ;
+    cursor: pointer;
+
+}
+
+.postCard:hover{
+    opacity: .4;
+}
+.postCard__wrapper{
+    flex: 1;
+    padding-left: 1.6rem;
+    padding-top: .875rem;
+}
+.postCard__header span{
+    font-size: .688rem;
+    margin-left: .5rem;
+}
+
+.postCard__content{
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--text-color);
+    line-height: 1.25rem;
+    letter-spacing: .25px;
+    margin-top: .4rem;
+}
+
+.postCard__actions button{
+    padding: 0 1.375rem;
+    background-color: #F5F5F5;
+    border:none;
+}
+

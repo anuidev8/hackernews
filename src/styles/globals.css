@@ -3,7 +3,8 @@
     --grey-color:#d6d6d6;
     --black-light-color:#979797;
     --dark-color:#2e2e2e;
-    --bg-button-color:#606060;
+    --black-color:#606060;
+    --text-color:#6b6b6b:
 }
 
 *{
@@ -14,10 +15,15 @@
 
 body{
     font-family: 'Roboto', sans-serif;
-    /* 1.6 REM = 16PX */
     font-size: 16px;
+    font-weight: 400;
+    color: var(--black-color);
 }
-
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
 /* GLOBAL CLASS */
 
 .wrapper{
