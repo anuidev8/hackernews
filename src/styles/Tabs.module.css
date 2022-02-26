@@ -1,0 +1,13 @@
+.tabs{
+    margin-top: 4.375rem;
+    margin-bottom: 4.375rem;
+}
+
+.tab__item{
+    width: 6.125rem;
+    height: 1.938rem;
+    border-radius: .125rem;
+    border: solid 1px var(--grey-color);
+    font-weight: 500;
+  
+}
