@@ -6,6 +6,12 @@ import PostCard from '../components/PostCard'
 describe('PostCard component', ()=>{
     let mainWrapper : any
 
+    const post = {
+        author:'Jhoe Doe',
+        story_title:'post title',
+        story_url:"post.url",
+        created_at:"3hr ago"
+    }
     beforeEach(()=>{
         mainWrapper = render(<PostCard />)
     })
@@ -39,6 +45,15 @@ describe('PostCard component', ()=>{
 
 
 
+    })
+
+    it('should rendering the correct props',()=>{
+           const {getByText} =  render(<PostCard {...post} />)
+            expect(getByText(post.author)).toBeInTheDocument()
+            expect(getByText(post.created_at)).toBeInTheDocument()
+            expect(getByText(post.story_title)).toBeInTheDocument()
+            expect(getByText(post.story_url)).toBeInTheDocument()
+        
     })
 
     afterAll(cleanup)
