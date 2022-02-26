@@ -3,7 +3,7 @@ import { render,cleanup,fireEvent, waitFor} from '@testing-library/react'
 
 import  SelectOptionTech from '../components/SelectOptionTech'
 
-describe('PostCard component', ()=>{
+describe('Post component', ()=>{
 
     const selectOptions = [
         {icon:'react',title:'react'},
