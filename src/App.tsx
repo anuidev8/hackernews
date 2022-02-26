@@ -3,9 +3,13 @@ import React from 'react';
 
 import MainRoutes  from './MainRoutes';
 
+//Components
+import MainHeader from './components/MainHeader';
+
 const App = () =>{
   return(
-    <main>
+    <main className='wrapper'>
+      <MainHeader  />
        <h1>web page</h1> 
       <MainRoutes />
 

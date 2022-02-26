@@ -1,0 +1,56 @@
+:root{
+    --primary-color:#1797ff;
+    --grey-color:#d6d6d6;
+    --black-light-color:#979797;
+    --dark-color:#2e2e2e;
+    --bg-button-color:#606060;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    /* 1.6 REM = 16PX */
+    font-size: 16px;
+}
+
+/* GLOBAL CLASS */
+
+.wrapper{
+    max-width: 90rem;
+}
+
+.content-padding{
+   /*  padding:  0 9.375rem; */
+   padding:  0 2rem; 
+}
+
+.w-full{
+    width: 100%;
+}
+.h-full{
+    height: 100%;
+}
+
+.d-flex{
+    display: flex;
+}
+.justify-center{
+    justify-content: center;
+}
+.align-center{
+    align-items: center;
+}
+
+.flex-column{
+    flex-direction: column;
+}
+
+.logo{
+    width: 13rem;
+    height: 1.75rem;
+}
