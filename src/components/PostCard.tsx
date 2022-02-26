@@ -21,7 +21,7 @@ const PostCard : FC<Props> = ({author,story_title,story_url,created_at})=>{
                <figure className='d-flex align-center'>
                     <Icons.TimeIcon  />
                </figure>
-               <span>{created_at} by {author}</span>
+               <span><span> {created_at}</span> by <span> {author}</span></span>
            </div>
            <p className={`${Styles.postCard__content}`}>
            {story_title}
