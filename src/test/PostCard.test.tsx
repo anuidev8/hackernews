@@ -48,11 +48,11 @@ describe('PostCard component', ()=>{
     })
 
     it('should rendering the correct props',()=>{
-           const {getByText} =  render(<PostCard {...post} />)
+           const {getByText,getByTestId} =  render(<PostCard {...post} />)
             expect(getByText(post.author)).toBeInTheDocument()
             expect(getByText(post.created_at)).toBeInTheDocument()
             expect(getByText(post.story_title)).toBeInTheDocument()
-            expect(getByText(post.story_url)).toBeInTheDocument()
+            expect(getByTestId(post.story_url)).toBeInTheDocument()
         
     })
 
