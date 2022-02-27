@@ -63,7 +63,7 @@ describe('Post component', ()=>{
     })
 
 
-    expect(mainWrapper.getByText('Angular')).toBeInTheDocument()
+    expect(mainWrapper.getByText('react')).toBeInTheDocument()
   
     })
 
