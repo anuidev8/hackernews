@@ -22,7 +22,7 @@ describe('Post component', ()=>{
     it('should rendering the elements for paint all elements of the select',()=>{
         const selectClassStyle = 'selectOption'
         const elements = [
-                `div[role="select"].${selectClassStyle}`,
+                `div[role="button"].${selectClassStyle}`,
                 `${selectClassStyle} button.${selectClassStyle}__button`,
                 `${selectClassStyle} button.${selectClassStyle}__button span`,
                 `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem`,
@@ -40,12 +40,12 @@ describe('Post component', ()=>{
     //ACTIONS
     it('should call onChange when the option is selected', async()=>{
             const mockedOnchange = jest.fn()
-            render(<SelectOptionTech onChange={ mockedOnchange} optionsItems={selectOptions} />)
+            render(<SelectOptionTech onChange={mockedOnchange} optionsItems={selectOptions} />)
             
             const SelectButton = mainWrapper.container.querySelector('button')
             userEvent.click(SelectButton)
 
-            const techsOptions = mainWrapper.container.querySelector('.selectOption__techs--show')
+            const techsOptions = mainWrapper.container.querySelector('.selectOption__techs')
             await waitFor(()=>techsOptions)   
             userEvent.click(techsOptions)
 
