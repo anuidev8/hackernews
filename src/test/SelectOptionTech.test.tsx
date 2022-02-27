@@ -1,6 +1,6 @@
 import react from 'react'
-import { render,cleanup, waitFor} from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { render,cleanup, waitFor,fireEvent} from '@testing-library/react'
+
 
 import  SelectOptionTech from '../components/SelectOptionTech'
 
@@ -45,7 +45,7 @@ describe('Post component', ()=>{
      
             
         const SelectButton = mainWrapper.container.querySelector('button')
-        userEvent.click(SelectButton)
+        fireEvent.click(SelectButton)
 
         const techsOptions = mainWrapper.container.querySelector('.selectOption__techs')
         await waitFor(()=>techsOptions)
@@ -54,19 +54,17 @@ describe('Post component', ()=>{
         const elements = [
             `li.${selectClassStyle}__techItem`,
             `li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_icon`,
-            `li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_text`,
+            `li.${selectClassStyle}__techItem span.${selectClassStyle}__techItem_text`,
 
     ]
     elements.forEach(element=>{
         const elementByTag = mainWrapper.container.querySelector(`${element}`) 
         expect(elementByTag).toBeTruthy()
     })
-    userEvent.click(techsOptions.container.querySelector('.selectOption__techItem'))
-    expect(onSendWavesMock).toHaveBeenCalledWith('Angular')
-
-            
 
 
+    expect(mainWrapper.getByText('Angular')).toBeInTheDocument()
+  
     })
 
     afterAll(cleanup)
