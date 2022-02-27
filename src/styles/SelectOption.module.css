@@ -1,0 +1,63 @@
+.selectOption{
+    width: 15rem;
+    cursor: pointer;
+    
+    
+}
+.selectOption__button{
+    position: relative;
+    padding: .313rem .75rem ;
+    height: 2rem;
+    background-color: transparent;
+    border: 1px solid var(--dark-color);
+    border-radius: .25rem;
+    font-size: 1rem;
+    color: #343434;
+    cursor: pointer;
+}
+.selectOption__button span{
+    
+  
+}
+.selectOption__button svg{
+    position: absolute;
+    right: .4rem;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.selectOption__techs{
+    contain: layout paint;
+    height: 8.688rem;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 #dad8d8;
+    transform: translateY(-20px);
+   
+    animation:slideUp .5s cubic-bezier(.17,.88,.32,1.87) both;
+}
+
+
+.selectOption__techItem{
+     padding: .75rem 0 .75rem .625rem ; 
+     transition: background-color .2s ease;  
+}
+.selectOption__techItem:hover{
+    background-color: #FBFBFB;
+}
+.selectOption__techItem_icon{
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: .813rem;
+}
+.selectOption__techItem_icon img{
+    object-fit: cover;
+}
+
+/* ANIMATIONS */
+
+@keyframes slideUp {
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+

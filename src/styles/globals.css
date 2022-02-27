@@ -65,3 +65,17 @@ a{
     height: 1.75rem;
 }
 
+
+/* GLOBAL ANIMATION */
+.disappear{
+    transform: translateY(2px);
+    animation:disappear .8s cubic-bezier(.98,-0.62,.99,0) both;
+}
+
+@keyframes disappear {
+    to{
+        transform: translateY(-70px);
+        opacity:0;
+    }
+}
+

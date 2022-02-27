@@ -34,6 +34,35 @@ export  class Icons {
       
         )
     }
+    static ArrowDownIcon:FC<Props> = ({size = '1rem'}) =>{
+        return(
+         <svg stroke="currentColor" fill="currentColor" strokeWidth={0} viewBox="0 0 24 24" height={size} width={size} ><path d="M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z" /></svg>
+        
+      
+        )
+    }
+
+    static AngularIcon:FC<Props> = () =>{
+        return(
+        
+                <img width={'100%'} height={'100%'} loading='lazy' alt='angular' src={require('../assets/icons/angular/angular-icon.png')} srcSet={`${require('../assets/icons/angular/angular-icon@2x.png')} 2x, ${require('../assets/icons/angular/angular-icon@3x.png')} 3x`} />
+         
+        )
+    }
+    static ReactIcon:FC<Props> = () =>{
+        return(
+        
+                <img width={'100%'} height={'100%'} loading='lazy' alt='react' src={require('../assets/icons/react/react-icon.png')} srcSet={`${require('../assets/icons/react/react-icon@2x.png')} 2x, ${require('../assets/icons/react/react-icon@3x.png')} 3x`} />
+         
+        )
+    }
+    static VueIcon:FC<Props> = () =>{
+        return(
+        
+                <img width={'100%'} height={'100%'} loading='lazy' alt='vue' src={require('../assets/icons/vue/vue-icon.png')} srcSet={`${require('../assets/icons/vue/vue-icon@2x.png')} 2x, ${require('../assets/icons/vue/vue-icon@3x.png')} 3x`} />
+         
+        )
+    }
 
     }
 
