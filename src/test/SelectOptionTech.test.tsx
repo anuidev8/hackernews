@@ -1,15 +1,15 @@
 import react from 'react'
-import { render,cleanup, waitFor} from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
+import { render,cleanup, waitFor,fireEvent} from '@testing-library/react'
+
 
 import  SelectOptionTech from '../components/SelectOptionTech'
 
 describe('Post component', ()=>{
 
     const selectOptions = [
-        {icon:'react',title:'react'},
-        {icon:'vue',title:'vue'},
-        {icon:'vue',title:'angular'},
+        {icon:'angular',title:'Angular'},
+        {icon:'react',title:'React'},
+        {icon:'vue',title:'Vue'},
     ]
  
     let mainWrapper : any
@@ -23,12 +23,8 @@ describe('Post component', ()=>{
         const selectClassStyle = 'selectOption'
         const elements = [
                 `div[role="button"].${selectClassStyle}`,
-                `${selectClassStyle} button.${selectClassStyle}__button`,
-                `${selectClassStyle} button.${selectClassStyle}__button span`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_icon`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_text`,
-                
+                `button.${selectClassStyle}__button`,
+                `button.${selectClassStyle}__button span`,    
 
         ]
         elements.forEach(element=>{
@@ -38,23 +34,42 @@ describe('Post component', ()=>{
     })
     
     //ACTIONS
-  it('should call onChange when the option is selected', async()=>{
-            const mockedOnchange = jest.fn()
-            render(<SelectOptionTech onChange={mockedOnchange} optionsItems={selectOptions} />)
+    it('should call onChange when the option is selected', async()=>{
+        const selectClassStyle = 'selectOption'
+        const onSendWavesMock = jest.fn();
+    render(
+      <SelectOptionTech 
+        optionsItems={selectOptions}
+        onChange={onSendWavesMock} />
+    );
+     
             
-            const SelectButton = mainWrapper.container.querySelector('button')
-            userEvent.click(SelectButton)
+        const SelectButton = mainWrapper.container.querySelector('button')
+        fireEvent.click(SelectButton)
 
-            const techsOptions = mainWrapper.container.querySelector('.selectOption__techs')
-            await waitFor(()=>techsOptions)   
-            userEvent.click(techsOptions)
+        const techsOptions = mainWrapper.container.querySelector('.selectOption__techs')
+        await waitFor(()=>techsOptions)
+        
+        expect(techsOptions).toBeInTheDocument()
+        const elements = [
+            `li.${selectClassStyle}__techItem`,
+            `li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_icon`,
+            `li.${selectClassStyle}__techItem span.${selectClassStyle}__techItem_text`,
 
-            expect(mockedOnchange).toHaveBeenCalledWith('Angular')
+    ]
+    elements.forEach(element=>{
+        const elementByTag = mainWrapper.container.querySelector(`${element}`) 
+        expect(elementByTag).toBeTruthy()
+    })
 
-            
 
-
+<<<<<<< HEAD
     }) 
+=======
+    expect(mainWrapper.getByText('react')).toBeInTheDocument()
+  
+    })
+>>>>>>> feacture/testing
 
     afterAll(cleanup)
 })
