@@ -23,12 +23,8 @@ describe('Post component', ()=>{
         const selectClassStyle = 'selectOption'
         const elements = [
                 `div[role="button"].${selectClassStyle}`,
-                `${selectClassStyle} button.${selectClassStyle}__button`,
-                `${selectClassStyle} button.${selectClassStyle}__button span`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_icon`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_text`,
-                
+                `button.${selectClassStyle}__button`,
+                `button.${selectClassStyle}__button span`,    
 
         ]
         elements.forEach(element=>{
@@ -39,17 +35,34 @@ describe('Post component', ()=>{
     
     //ACTIONS
     it('should call onChange when the option is selected', async()=>{
-            const mockedOnchange = jest.fn()
-            render(<SelectOptionTech onChange={mockedOnchange} optionsItems={selectOptions} />)
+        const selectClassStyle = 'selectOption'
+        const onSendWavesMock = jest.fn();
+    render(
+      <SelectOptionTech 
+        optionsItems={selectOptions}
+        onChange={onSendWavesMock} />
+    );
+     
             
-            const SelectButton = mainWrapper.container.querySelector('button')
-            userEvent.click(SelectButton)
+        const SelectButton = mainWrapper.container.querySelector('button')
+        userEvent.click(SelectButton)
 
-            const techsOptions = mainWrapper.container.querySelector('.selectOption__techs')
-            await waitFor(()=>techsOptions)   
-            userEvent.click(techsOptions)
+        const techsOptions = mainWrapper.container.querySelector('.selectOption__techs')
+        await waitFor(()=>techsOptions)
+        
+        expect(techsOptions).toBeInTheDocument()
+        const elements = [
+            `li.${selectClassStyle}__techItem`,
+            `li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_icon`,
+            `li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_text`,
 
-            expect(mockedOnchange).toHaveBeenCalledWith('Angular')
+    ]
+    elements.forEach(element=>{
+        const elementByTag = mainWrapper.container.querySelector(`${element}`) 
+        expect(elementByTag).toBeTruthy()
+    })
+    userEvent.click(techsOptions.container.querySelector('.selectOption__techItem'))
+    expect(onSendWavesMock).toHaveBeenCalledWith('Angular')
 
             
 
