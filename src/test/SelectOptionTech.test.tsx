@@ -7,9 +7,9 @@ import  SelectOptionTech from '../components/SelectOptionTech'
 describe('Post component', ()=>{
 
     const selectOptions = [
-        {icon:'react',title:'react'},
-        {icon:'vue',title:'vue'},
-        {icon:'vue',title:'angular'},
+        {icon:'angular',title:'Angular'},
+        {icon:'react',title:'React'},
+        {icon:'vue',title:'Vue'},
     ]
  
     let mainWrapper : any
