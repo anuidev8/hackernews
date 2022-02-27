@@ -1,5 +1,6 @@
 import react from 'react'
-import { render,cleanup,fireEvent, waitFor} from '@testing-library/react'
+import { render,cleanup, waitFor} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 import  SelectOptionTech from '../components/SelectOptionTech'
 
@@ -25,8 +26,8 @@ describe('Post component', ()=>{
                 `${selectClassStyle} button.${selectClassStyle}__button`,
                 `${selectClassStyle} button.${selectClassStyle}__button span`,
                 `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem-icon`,
-                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem-text`,
+                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_icon`,
+                `${selectClassStyle} ul.${selectClassStyle}__techs li.${selectClassStyle}__techItem figure.${selectClassStyle}__techItem_text`,
                 
 
         ]
@@ -37,23 +38,23 @@ describe('Post component', ()=>{
     })
     
     //ACTIONS
-  /*   it('should call onChange when the option is selected', async()=>{
+  it('should call onChange when the option is selected', async()=>{
             const mockedOnchange = jest.fn()
             render(<SelectOptionTech onChange={ mockedOnchange} optionsItems={selectOptions} />)
             
             const SelectButton = mainWrapper.container.querySelector('button')
-            fireEvent.click(SelectButton)
+            userEvent.click(SelectButton)
 
             const techsOptions = mainWrapper.container.querySelector('.selectOption__techs--show')
             await waitFor(()=>techsOptions)   
-            fireEvent.click(techsOptions)
+            userEvent.click(techsOptions)
 
-            expect(mockedOnchange).toHaveBeenCalledTimes(1)
+            expect(mockedOnchange).toHaveBeenCalledWith('Angular')
 
             
 
 
-    }) */
+    }) 
 
     afterAll(cleanup)
 })
