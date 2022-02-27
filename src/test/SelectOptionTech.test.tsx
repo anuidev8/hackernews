@@ -63,13 +63,9 @@ describe('Post component', ()=>{
     })
 
 
-<<<<<<< HEAD
-    }) 
-=======
     expect(mainWrapper.getByText('react')).toBeInTheDocument()
   
     })
->>>>>>> feacture/testing
 
     afterAll(cleanup)
 })
