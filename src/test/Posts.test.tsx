@@ -9,7 +9,7 @@ import {setupServer } from 'msw/node'
 import { apiUrl } from '../utils/apiUrl'
 
 //COMPONENTS
-import PostList from '../components/PostList'
+import PostList from '../pages/Posts'
 
 const server = setupServer(
     rest.get(apiUrl,(req,res,ctx)=>{
@@ -29,9 +29,9 @@ describe('posts list',()=>{
 
             const loading = await waitFor(()=>wrapper.getByTestId('loading'))
 
-            expect(loading).toBeUndefined()
+            expect(loading).toBeDefined()
 
-            const postContainer = await waitFor(()=>wrapper.findByTestId('.posts-List-container'))
+            const postContainer = await waitFor(()=>wrapper.findByTestId('posts-List-container'))
             expect(postContainer).toBeInTheDocument()
             
             const selectOptionTechs = wrapper.findByTestId('select-option-techs')

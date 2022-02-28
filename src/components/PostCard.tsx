@@ -38,7 +38,7 @@ const PostCard : FC<Props> = ({author,story_title,story_url,created_at,fave,onSe
         fave && setFaveToggle(!faveToggle)
     },[])
     return(
-       <article data-testid={story_url} className={`${Styles.postCard} d-flex`}>
+       <article data-testid={story_url} className={`${Styles.postCard} d-flex grid-item appear`}>
             
            <a href={`${story_url ? story_url : '/'}`} target="_blank" rel={'noreferrer'} className={`${Styles.postCard__wrapper}`}>
            <div className={`${Styles.postCard__header}  d-flex align-center`} >

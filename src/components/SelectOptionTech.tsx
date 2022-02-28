@@ -59,7 +59,7 @@ const SelectOptionTech : FC<Props> = ({optionsItems,onChange}) =>{
         })
     },[])
     return(
-        <div role={'button'}  className={`${Styles.selectOption}`}>
+        <div role={'button'} data-testid="select-option-techs"  className={`${Styles.selectOption}`}>
                <button data-testid="select-button" onClick={(e)=>onShowSelectOptions(e)}  className={`${Styles.selectOption__button} d-flex w-full`}>
                     <span>{techSelected}</span>
                     <Icons.ArrowDownIcon  />    

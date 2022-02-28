@@ -1,6 +1,7 @@
 .selectOption{
     width: 15rem;
     cursor: pointer;
+    position: relative;
     
     
 }
@@ -26,13 +27,14 @@
     transform: translateY(-50%);
 }
 .selectOption__techs{
+    position: absolute;
     contain: layout paint;
     height: 8.688rem;
     background-color: #fff;
     box-shadow: 0 2px 2px 0 #dad8d8;
     transform: translateY(-20px);
-   
     animation:slideUp .5s cubic-bezier(.17,.88,.32,1.87) both;
+    z-index: 10;
 }
 
 

@@ -55,11 +55,10 @@ const Posts = () => {
        
     },[page,tech])
     return(
-    <section>
-        <h1>Welcome</h1>
+    <section className='content-padding w-full'>
         <SelectOptionTech onChange={techSelected} optionsItems={selectOptions} />
         {
-            isLoading && <h3>Loading...</h3>
+            isLoading && <h3 data-testid="loading">Loading...</h3>
         }
         {
             !isLoading &&

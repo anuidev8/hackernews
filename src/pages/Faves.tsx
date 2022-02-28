@@ -22,12 +22,14 @@ const Faves = () => {
     },[page])
 
     return(
-    <section>
+    <section className='content-padding w-full'>
        
         {
             news.length > 0  ?(
             <Fragment>
-                <PostList postList={news} />
+            
+                    <PostList postList={news} />
+                
                 {
                     totalPages > 1 &&
                     <Pagination

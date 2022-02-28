@@ -1,7 +1,7 @@
 .postCard{
   
     contain: layout paint;
-    height: 90px;
+    height: auto;
     background-color: #fff;
     border: solid 1px var(--black-light-color);
     border-radius: .3rem;
@@ -15,9 +15,10 @@
     opacity: .4;
 }
 .postCard__wrapper{
-    flex: 1;
-    padding-left: 1.6rem;
-    padding-top: .875rem;
+  flex: 1;
+  padding-left: 1.6rem;
+  padding-top: .875rem;
+  padding-bottom: .875rem;
 }
 .postCard__header span{
     font-size: .688rem;
@@ -84,4 +85,17 @@ stroke-dashoffset: 100;
       stroke-dashoffset:-100;
     }
   }
+
+  /* RESPONSIVE FOR DESKTOP */
+@media (min-width: 700px) { 
+  .postCard{
+    height: 5.6rem ;
+   
+  }
+  .postCard__wrapper{
+    flex: 1;
+    padding-left: 1.6rem;
+    padding-top: .875rem;
+}
+}
 

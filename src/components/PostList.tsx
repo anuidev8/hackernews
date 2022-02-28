@@ -36,12 +36,15 @@ const PostList: FC<Props> = ({postList})=>{
     }
     return(
        <section>
+           <div data-testid="posts-List-container" className='grid justify-center align-center'>
            {
                postList && postList.map((news:Post,key)=>(
                    <PostCard key={key} {...news} onSetPost={onSetPost} />
 
                ))
            }
+
+           </div>
        </section>
     )
 }
