@@ -34,10 +34,23 @@ const Posts = () => {
        setIsLoading(true)   
        const getTechFromStore = localStorage.getItem('news_category')
        getNews('search_by_date',`${page-1}`,getTechFromStore ? getTechFromStore : tech).then((res)=>{
-           setNews(res)
+           const setNewsParse:any = localStorage.getItem('news')
+           const news = setNewsParse ? JSON.parse(setNewsParse) : []           
+           for(var i=0;i<res.length;i++)
+           {
+               for(var j=0;j<news.length;j++)
+               {
+                   if(res[i].created_at === news[j].created_at && news[j].fave ){
+                        res[i].fave = true  
+                    }  
+                }
+                
+            }
+            
+            setNews(res)
+        
            setIsLoading(false)   
         })
-        console.log('change');
         
        
     },[page,tech])

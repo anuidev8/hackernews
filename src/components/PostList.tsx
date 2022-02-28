@@ -9,6 +9,7 @@ export type Post = {
     story_title?:string
     story_url?:string
     created_at?:string
+    fave?:boolean
 }
 
 interface Props  {
@@ -16,11 +17,28 @@ interface Props  {
 }
 
 const PostList: FC<Props> = ({postList})=>{
+
+    const onSetPost = (post:any) =>{
+    
+        let posts:any  = []
+        const setNews:any = localStorage.getItem('news')
+        const news = setNews ? JSON.parse(setNews) : []
+        posts = [...news,post]  
+        if(!post.fave ){
+            const findPost =  posts.filter((item:any)=>item.created_at !== post.created_at)
+            console.log(findPost);
+            
+            posts = findPost
+        } 
+        localStorage.setItem('news',JSON.stringify(posts))
+      
+        
+    }
     return(
        <section>
            {
                postList && postList.map((news:Post,key)=>(
-                   <PostCard key={key} {...news} />
+                   <PostCard key={key} {...news} onSetPost={onSetPost} />
 
                ))
            }

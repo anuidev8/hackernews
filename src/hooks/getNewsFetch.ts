@@ -5,11 +5,14 @@ export const getNews = async (searchBy?:string,page?:string,tech?:string) =>{
     const res = await fetch(url)
     const {hits} = await res.json()
     const news = hits.map((hit:any)=>{
+
         return {
             author:hit.author,
             story_title:hit.story_title,
             story_url:hit.story_url,
-            created_at:hit.created_at
+            created_at:hit.created_at,
+            
+            
         }
     })
     
