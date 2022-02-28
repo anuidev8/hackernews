@@ -37,5 +37,51 @@
     padding: 0 1.375rem;
     background-color: #F5F5F5;
     border:none;
+    cursor: pointer;
 }
+
+.postCard__button{
+
+}
+
+.postCard__actions_icon{
+    width: 2rem;
+    height: 2rem;
+}
+.postCard__actions_icon svg{
+    fill: transparent;
+    stroke:#dd0031;
+    transition:color .3s ease;
+}
+.postCard__actions_icon_fill svg{
+    fill: #dd0031;
+    stroke: none;
+
+}
+
+
+.heart__silhouettes {
+stroke-dasharray: 100;
+stroke-dashoffset: 100;
+ 
+  }
+.heart__silhouettes_show {
+    stroke-dasharray: 100;
+    stroke-dashoffset: 100;
+    animation: dash 2s ease  both;
+  }
+  
+  @keyframes dash {
+    0% {
+        stroke-dashoffset:100;
+      }
+    
+    50% {
+      stroke-dashoffset: 0;
+    }
+    
+    100% {
+      stroke-dashoffset:-100;
+    }
+  }
 

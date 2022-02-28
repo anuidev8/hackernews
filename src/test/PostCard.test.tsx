@@ -1,5 +1,5 @@
 import react from 'react'
-import { render,cleanup,fireEvent } from '@testing-library/react'
+import { render,cleanup,fireEvent,waitFor } from '@testing-library/react'
 
 import PostCard from '../components/PostCard'
 
@@ -25,6 +25,7 @@ describe('PostCard component', ()=>{
                 `.${postClassStyle}__header span`,
                 `p.${postClassStyle}__content`,
                 `.${postClassStyle}__actions button`,
+                `.${postClassStyle}__actions button figure`,
 
         ]
         elements.forEach(element=>{
@@ -34,13 +35,16 @@ describe('PostCard component', ()=>{
     })
     
     //ACTIONS
-    it('should add the post to faves posts when user click on the like button',()=>{
-        const faveButton = mainWrapper.container.querySelector('button.postCard-button')
+    it('should add the post to faves posts when user click on the like button',async()=>{
+        const onSendWavesMock = jest.fn();
+        render(
+            <PostCard onSetPost={onSendWavesMock} />
+        )
         
-        fireEvent.click(faveButton)
-
-        const faveIconButton = mainWrapper.container.querySelector('postCard__header figure.post-icon-fill')
-
+        fireEvent.click(mainWrapper.container.querySelector('.postCard__button'))
+          
+        const faveIconButton = mainWrapper.container.querySelector('.postCard__actions_icon_fill')
+        await waitFor(()=>faveIconButton)   
         expect(faveIconButton).toBeInTheDocument()
 
 
