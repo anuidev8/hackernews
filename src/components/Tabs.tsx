@@ -30,7 +30,7 @@ const Tabs: FC<Props> = ({tabItems}) =>{
                           style={({ isActive }) => {
                             return {
                               borderColor:`${isActive ? '#1797ff' : '#d6d6d6'}`,  
-                              borderRight:`${isActive && tabItem.title === 'All' && 'none'}`,
+                          
                               color: isActive ? "#1797ff" : "#606060",
                             };
                           }}

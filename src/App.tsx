@@ -16,7 +16,6 @@ const App = () =>{
     <main className='wrapper'>
       <MainHeader  />
       <Tabs tabItems={tabLinks} />
-       <h1>web page</h1> 
       <MainRoutes />
 
     </main>
