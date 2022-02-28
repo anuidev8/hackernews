@@ -1,0 +1,36 @@
+.paginationWrapper {
+    padding: 2rem 0;
+  
+  }
+  .separator {
+    width: 1rem;
+    margin: 0 .25rem;
+  }
+  .pageItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2rem;
+    width: 2rem;
+    margin: 0 .5rem;
+    background-color: white;
+    border: solid 1px #d9d9d9;
+    border-radius: .375rem;
+    color:rgba(0, 0, 0, 0.65);
+    font-size: .875rem;
+    cursor: pointer;
+ 
+  }
+  .active {
+    background-color: var(--primary-color);
+    border:none;
+    color: white
+  
+  }
+  .active .sides {
+    box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  }
+  .active .sides:hover {
+    text-decoration: none;
+    box-shadow: transparent 0px 0px 0px 1px, transparent 0px 0px 0px 4px, rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  }

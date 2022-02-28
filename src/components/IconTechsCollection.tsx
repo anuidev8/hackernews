@@ -6,7 +6,7 @@ export const IconTechsCollection = [
         icon:<Icons.AngularIcon />
     },
     {
-        title:"React",
+        title:"Reactjs",
         icon:<Icons.ReactIcon />
     },
     {

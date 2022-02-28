@@ -1,5 +1,8 @@
 import { FC }  from 'react'
 
+//components
+import PostCard from './PostCard'
+
 
 export type Post = {
     author?:string
@@ -14,7 +17,14 @@ interface Props  {
 
 const PostList: FC<Props> = ({postList})=>{
     return(
-        <div></div>
+       <section>
+           {
+               postList && postList.map((news:Post,key)=>(
+                   <PostCard key={key} {...news} />
+
+               ))
+           }
+       </section>
     )
 }
 
