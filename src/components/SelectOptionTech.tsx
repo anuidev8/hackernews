@@ -19,9 +19,8 @@ interface Props {
 }
 
 const SelectOptionTech : FC<Props> = ({optionsItems,onChange}) =>{
-    const getTechFromStore = localStorage.getItem('news_category')
     const optionsBox = useRef<HTMLUListElement>(null);
-    const [techSelected,setTechSelected] = useState<string>( getTechFromStore ?  getTechFromStore : 'Select your news')
+    const [techSelected,setTechSelected] = useState<string>('Select your news')
     const [showSelect,setShowSelect] = useState<boolean>(false)
 
     const returnIcon = (icon:string) => {
@@ -53,7 +52,8 @@ const SelectOptionTech : FC<Props> = ({optionsItems,onChange}) =>{
     }    
 
     useEffect(()=>{
-        getTechFromStore && onChange(getTechFromStore)
+        const getTechFromStore = localStorage.getItem('news_category')
+        setTechSelected(getTechFromStore ? getTechFromStore : 'Select your news')    
         document.addEventListener('click',()=>{
             setShowSelect(false) 
         })
