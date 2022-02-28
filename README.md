@@ -1,6 +1,16 @@
-# Getting Started with Create React App
+# HACKER NEWS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About
+
+This is a web site for shared the last news in the word techs .
+
+## Motivation
+
+My motivation for build this web site is to use my knowledge about css and js for and react something that help me to improve my skills about complex web application , no matter the technologies that use, the important thing is what you use them for. use the animation for share knowledge about anything is awesome.
+
+## Demo
+
+[demo](https://621c9f25d0478d45f9bbfbc0--friendly-archimedes-d5117c.netlify.app/)
 
 ## Available Scripts
 
@@ -39,8 +49,11 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Tecnologías
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🖥 [TYPESCRIPT](https://www.typescriptlang.org/)
+🖥 [REACT](https://es.reactjs.org/)
+🖼 SVG
+🖌 CSS
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#StartedaNewPathAsDeveloper ⌨️ with ❤️ for Angel Arrieta [@anuidev8](https://github.com/anuidev8)
