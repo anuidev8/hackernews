@@ -1,4 +1,5 @@
 import { FC, useEffect, useState } from 'react'
+import moment from 'moment'
 
 import Styles from '../styles/Postcard.module.css'
 //Components
@@ -27,22 +28,29 @@ const PostCard : FC<Props> = ({author,story_title,story_url,created_at,fave,onSe
             fave:!faveToggle ? true : false
         },!faveToggle ? true : false)
     }
+
+    const getHour = (date:string | any) =>{
+        return moment(date).fromNow()
+    }
     useEffect(()=>{
+        
+        
         fave && setFaveToggle(!faveToggle)
     },[])
     return(
        <article data-testid={story_url} className={`${Styles.postCard} d-flex`}>
-           <div className={`${Styles.postCard__wrapper}`}>
+            
+           <a href={`${story_url ? story_url : '/'}`} target="_blank" rel={'noreferrer'} className={`${Styles.postCard__wrapper}`}>
            <div className={`${Styles.postCard__header}  d-flex align-center`} >
                <figure className='d-flex align-center'>
                     <Icons.TimeIcon  />
                </figure>
-               <span><span> {created_at}</span> by <span> {author}</span></span>
+               <span><span> {getHour(created_at)}</span> by <span> {author}</span></span>
            </div>
            <p className={`${Styles.postCard__content}`}>
            {story_title}
            </p>
-           </div>
+           </a>
            <ul className={`${Styles.postCard__actions}`}>
                 <li className='h-full'>
                     <button onClick={()=>addToFave()} className={`h-full d-flex justify-center align-center ${Styles.postCard__button}`}>
