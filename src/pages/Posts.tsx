@@ -26,12 +26,14 @@ const Posts = () => {
     const handlePages = (updatePage: number) => setPage(updatePage);
 
     const techSelected = (arg:any) =>{
+            localStorage.setItem('news_category',arg)
             setTech(arg)
     }
 
     useEffect(()=>{
        setIsLoading(true)   
-       getNews('search_by_date',`${page-1}`,tech).then((res)=>{
+       const getTechFromStore = localStorage.getItem('news_category')
+       getNews('search_by_date',`${page-1}`,getTechFromStore ? getTechFromStore : tech).then((res)=>{
            setNews(res)
            setIsLoading(false)   
         })
