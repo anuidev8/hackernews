@@ -35,7 +35,7 @@ const PostCard : FC<Props> = ({author,story_title,story_url,created_at,fave,onSe
     useEffect(()=>{
         
         
-        fave && setFaveToggle(!faveToggle)
+        fave && setFaveToggle(true)
     },[fave])
     return(
        <article data-testid={story_url} className={`${Styles.postCard} d-flex grid-item appear`}>
